@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 
 const CreateTask = () => {
+  const data = JSON.parse(localStorage.getItem("employees"));
+
   const [newTask, setNewTask] = useState({
     title: "",
-    desc: "",
+    description: "",
     date: "",
     category: "",
     assignTo: "",
+    active: false,
+    newTask: true,
+    completed: false,
+    failed: false,
   });
 
   const handleChange = (e) => {
-    console.log("changed");
     const { name, value } = e.target;
 
     setNewTask((prevData) => ({
@@ -25,11 +30,21 @@ const CreateTask = () => {
     console.log(newTask);
     setNewTask({
       title: "",
-      desc: "",
+      description: "",
       date: "",
       category: "",
       assignTo: "",
+      active: false,
+      newTask: true,
+      completed: false,
+      failed: false,
     });
+    const updatedData = data.map((employee) =>
+      employee.name === newTask.assignTo
+        ? { ...employee, tasks: [...employee.tasks, newTask] }
+        : employee
+    );
+    console.log(updatedData);
   };
 
   return (
@@ -89,9 +104,9 @@ const CreateTask = () => {
           <textarea
             className="w-full h-52 text-sm py-2 px-4 rounded outline-none bg-transparent border border-gray-400"
             placeholder="Enter Task Description"
-            value={newTask.desc}
+            value={newTask.description}
             onChange={handleChange}
-            name="desc"
+            name="description"
           ></textarea>
           <button className="bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-5 w-full">
             Create Task

@@ -18,6 +18,11 @@ const App = () => {
     }
   }, []);
 
+  const userLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    setUser(null);
+  };
+
   const handleLogin = (email, password) => {
     if (email === "admin@me.com" && password === "123") {
       setUser("admin");
@@ -47,9 +52,11 @@ const App = () => {
     <div className="">
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user === "admin" ? (
-        <AdminDashboard data={{ name: "vinay" }} />
+        <AdminDashboard userLogout={userLogout} data={{ name: "vinay" }} />
       ) : (
-        user === "employee" && <EmployeeDashboard data={loggedInUserData} />
+        user === "employee" && (
+          <EmployeeDashboard userLogout={userLogout} data={loggedInUserData} />
+        )
       )}
     </div>
   );
