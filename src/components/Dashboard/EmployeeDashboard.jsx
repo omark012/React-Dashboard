@@ -6,7 +6,7 @@ import TaskList from "../TaskList/TaskList";
 const EmployeeDashboard = ({ data, userLogout }) => {
   return (
     <div
-      className="text-white bg-[#1c1c1c] 
+      className="text-white bg-zinc-800
        h-screen container mx-auto p-3"
     >
       <Header data={data} userLogout={userLogout} />

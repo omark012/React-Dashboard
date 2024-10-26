@@ -8,7 +8,8 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState("");
 
-  const authData = useContext(AuthContext);
+  // getting data of employees from ContextApi
+  const [userData] = useContext(AuthContext);
 
   useEffect(() => {
     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -27,8 +28,8 @@ const App = () => {
     if (email === "admin@me.com" && password === "123") {
       setUser("admin");
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
-    } else if (authData) {
-      const employee = authData.employees.find(
+    } else if (userData) {
+      const employee = userData.find(
         (e) => e.email === email && e.password === password
       );
       if (employee) {

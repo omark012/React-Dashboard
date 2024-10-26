@@ -17,7 +17,6 @@ const Login = ({ handleLogin }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(formData);
     handleLogin(formData.email, formData.password);
     setFormData({
       email: "",

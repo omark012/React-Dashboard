@@ -11,8 +11,8 @@ const NewTask = ({ task }) => {
       </div>
       <h2 className="task text-xl mt-10 font-bold">{task.title}</h2>
       <p className="description mt-2 text-sm h-24">{task.description}</p>
-      <div className="flex justify-end mt-10">
-        <button className="bg-green-500 px-1 py-1 rounded hover:bg-green-600 ">
+      <div className="mt-10 ">
+        <button className="bg-green-500 w-full px-1 py-1 rounded transition duration-300 ease-in-out hover:bg-green-600 ">
           Accept Task
         </button>
       </div>

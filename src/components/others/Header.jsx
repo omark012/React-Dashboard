@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = ({ userLogout }) => {
   return (
-    <div className="text-white  flex items-center justify-between my-1 py-3">
+    <div className="text-white  flex items-center justify-between mt-1 py-3">
       <h1>
         Hello <br /> <span className="text-2xl font-bold">user 👋</span>{" "}
       </h1>

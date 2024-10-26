@@ -7,13 +7,16 @@ const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState({});
   useEffect(() => {
     setLocalStorage();
-    const { employees, admin } = getLocalStorage();
-    setUserData({ employees, admin });
+    const { employees } = getLocalStorage();
+    setUserData(employees); //have set the state with employees
   }, []);
+  console.log("userData inside provider", userData);
 
   return (
     <div>
-      <AuthContext.Provider value={userData}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={[userData, setUserData]}>
+        {children}
+      </AuthContext.Provider>
     </div>
   );
 };
