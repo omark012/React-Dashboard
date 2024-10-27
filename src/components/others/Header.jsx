@@ -1,10 +1,13 @@
 import React from "react";
 
-const Header = ({ userLogout }) => {
+const Header = ({ data, userLogout }) => {
+  console.log(data);
+
   return (
     <div className="text-white  flex items-center justify-between mt-1 py-3">
       <h1>
-        Hello <br /> <span className="text-2xl font-bold">user 👋</span>{" "}
+        Hello <br />{" "}
+        <span className="text-2xl font-bold">{data?.name || "user"} 👋</span>{" "}
       </h1>
       <button
         onClick={userLogout}

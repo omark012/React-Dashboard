@@ -3,10 +3,10 @@ import Header from "../others/Header";
 import CreateTask from "../others/CreateTask";
 import AllTask from "../others/AllTask";
 
-const AdminDashboard = ({ userLogout }) => {
+const AdminDashboard = ({ data, userLogout }) => {
   return (
     <div className=" h-screen w-full container mx-auto">
-      <Header userLogout={userLogout} />
+      <Header data={data} userLogout={userLogout} />
       <CreateTask />
       <AllTask />
     </div>

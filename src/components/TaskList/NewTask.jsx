@@ -1,6 +1,8 @@
 import React from "react";
 
 const NewTask = ({ task }) => {
+  console.log(task);
+
   return (
     <div className="flex-shrink-0 h-full w-[300px] p-5 border-2 border-blue-500 rounded-xl">
       <div className="flex items-center justify-between ">

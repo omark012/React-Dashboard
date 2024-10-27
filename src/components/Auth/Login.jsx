@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = ({ handleLogin }) => {
+const Login = ({ handleLogin, error }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -48,7 +48,12 @@ const Login = ({ handleLogin }) => {
             onChange={handleChange}
             name="password"
           />
-          <button className=" bg-emerald-500 mt-3 px-3 py-2 outline-none  text-xl rounded-full w-full">
+          {error && (
+            <p className="bg-red-600 w-full text-center rounded p-1 ">
+              Invalid credentials
+            </p>
+          )}
+          <button className=" bg-emerald-500 mt-3 px-3 py-2 outline-none  text-xl rounded-full w-full transition-transform duration-200 transform hover:scale-105 hover:bg-emerald-600">
             Log In
           </button>
         </form>

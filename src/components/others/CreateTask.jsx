@@ -50,8 +50,8 @@ const CreateTask = () => {
           }
         : employee
     );
+    console.log("updated", updatedData);
     setUserData(updatedData);
-    console.log(updatedData);
 
     setNewTask({
       title: "",
@@ -104,14 +104,23 @@ const CreateTask = () => {
             <h3 className="text-md text-gray-300 mb-1 font-semibold">
               Assign to
             </h3>
-            <input
-              type="text"
-              placeholder="Enter Employee Name"
-              className="text-sm py-2 px-3 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
+
+            <select
+              className="text-sm py-2 px-3 w-4/5 rounded bg-[#1c1c1c] border border-gray-400 mb-4"
               value={assignTo}
               onChange={handleChange}
               name="assignTo"
-            />
+            >
+              <option value="" disabled>
+                Select Employee
+              </option>
+              {userData &&
+                userData.map((employee, idx) => (
+                  <option key={idx} value={employee.name}>
+                    {employee.name}
+                  </option>
+                ))}
+            </select>
           </div>
           <div>
             <h3 className="text-md text-gray-300 mb-1 font-semibold">

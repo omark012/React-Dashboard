@@ -13,7 +13,9 @@ const FailedTask = ({ task }) => {
       <p className="description mt-2 text-sm h-24">{task.description}</p>
 
       <div className="mt-10">
-        <button className="bg-red-500 w-full px-1 py-1 rounded ">Failed</button>
+        <button disabled className="bg-red-500 w-full px-1 py-1 rounded ">
+          Failed
+        </button>
       </div>
     </div>
   );
