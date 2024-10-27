@@ -1,5 +1,7 @@
 # React Dashboard
 
+You can try out the React Dashboard App [Go to App](https://sleekdashboard.netlify.app).
+
 ## Overview
 
 This project showcases a modern and responsive dashboard built with **React**, **Vite**, **Tailwind CSS**, and the **Context API**. It's designed to provide an intuitive interface for managing and visualizing data effectively. Whether you're looking to track metrics or manage resources, this dashboard offers a sleek solution for your needs.
