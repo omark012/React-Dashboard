@@ -3,7 +3,7 @@ const employees = [
     id: 1,
     name: "Vijay",
     password: "123",
-    email: "e@e.com",
+    email: "employee1@example.com",
     taskCounts: {
       active: 1,
       newTask: 1,
@@ -109,7 +109,7 @@ const employees = [
   },
   {
     id: 3,
-    name: "Kohli",
+    name: "Shami",
     password: "123",
     email: "employee3@example.com",
     taskCounts: {

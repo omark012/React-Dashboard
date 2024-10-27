@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserList from "../others/usersList";
 
 const Login = ({ handleLogin, error }) => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ const Login = ({ handleLogin, error }) => {
     });
   };
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="flex  h-screen items-center justify-center">
       <div className="border-2 border-emerald-500 rounded-lg p-20">
         <form
           onSubmit={submitHandler}
@@ -57,6 +58,9 @@ const Login = ({ handleLogin, error }) => {
             Log In
           </button>
         </form>
+      </div>
+      <div>
+        <UserList />
       </div>
     </div>
   );

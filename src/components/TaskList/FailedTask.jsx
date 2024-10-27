@@ -2,7 +2,7 @@ import React from "react";
 
 const FailedTask = ({ task }) => {
   return (
-    <div className="flex-shrink-0 h-full w-[300px] p-5 border-2 border-red-500 rounded-xl">
+    <div className="flex-shrink-0 h-full w-[300px] p-5 border-2 border-red-500 rounded-xl transition-transform duration-200 transform hover:-translate-y-2">
       <div className="flex items-center justify-between ">
         <h3 className="bg-blue-500 text-md rounded-md px-4 py-1">
           {task.category}
